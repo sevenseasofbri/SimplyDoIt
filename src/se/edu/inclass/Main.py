@@ -1,32 +1,32 @@
 from data.DataManager import DataManager
 from task.Deadline import Deadline
 from task.Task import Task
-from task.TaskNameComparator import TaskNameComparator
 from typing import List
 
 def main():
-    print("Welcome to Task (stream) manager\n")
+    print("Welcome to SimplyDoIt\n")
     dm = DataManager("./data/data.txt")
     tasks_data = dm.load_data()
 
     # Print data
     print()
-    print("Printing deadlines before sorting")
+    print("Deadlines before sorting")
     print_deadlines(tasks_data)
 
     # Count deadlines
     print("Total number of deadlines:", count_deadlines(tasks_data))
 
     # Print deadlines using streams
-    print("Printing deadlines after sorting")
+    print("\n")
+    print("Deadlines after sorting")
     print_deadlines_using_stream(tasks_data)
 
     # Count deadlines using streams
     print("Total number of deadlines counted using streams:", count_deadlines_using_stream(tasks_data))
 
     # Filter tasks using streams
-    filtered_list = filter_task_list_using_streams(tasks_data, "11")
-    print("\nFiltered list of tasks:")
+    filtered_list = filter_task_list_using_streams(tasks_data, "Client")
+    print("\nFiltered list of tasks (filtered by keyword \"Client\"):")
     print_data(filtered_list)
 
 def count_deadlines(tasks_data: List[Task]) -> int:
@@ -46,13 +46,13 @@ def print_data(tasks_data: List[Task]):
         print(task)
 
 def print_deadlines(tasks_data: List[Task]):
-    print("Printing deadline using iteration")
+    print("     Printing deadline using iteration")
     for task in tasks_data:
         if isinstance(task, Deadline):
             print(task)
 
 def print_deadlines_using_stream(tasks: List[Task]):
-    print("Printing deadline using streams")
+    print("     Printing deadline using streams")
     sorted_tasks = sorted(tasks, key=lambda x: x.get_description().lower())
     for task in filter(lambda x: isinstance(x, Deadline), sorted_tasks):
         print(task)

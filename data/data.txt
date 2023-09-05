@@ -1,47 +1,42 @@
-[E],Event14
-[T],Task8
-[E],Event5
-[T],Task5
-[E],Event7
-[T],Task19
-[E],Event12
-[E],Event15
-[T],Task7
-[T],Task6
-[D],Deadline1
-[T],Task2
-[T],Task16
-[T],Task1
-[E],Event13
-[T],Task11
-[E],Event20
-[T],Task4
-[T],Task3
-[T],Task13
-[D],Deadline4
-[E],Event4
-[T],Task18
-[E],Event18
-[T],Task14
-[E],Event2
-[T],Task15
-[E],Event3
-[E],Event16
-[D],Deadline3
-[T],Task9
-[D],Deadline6
-[T],Task20
-[E],Event10
-[E],Event11
-[E],Event1
-[E],Event6
-[E],Event9
-[D],Deadline7
-[E],Event17
-[T],Task17
-[T],Task10
-[D],Deadline2
-[E],Event19
-[E],Event8
-[D],Deadline5
-[T],Task12
+[E],Birthday Party
+[T],Buy Groceries
+[E],Conference
+[T],Write Report
+[E],Team Meeting
+[T],Prepare Presentation
+[E],Product Launch
+[E],Company Retreat
+[T],Review Contracts
+[T],Submit Expense Report
+[D],Project Deadline
+[T],Finish Proposal
+[T],Complete Training
+[T],Send Invoices
+[E],Client Meeting
+[T],Update Website
+[E],Networking Event
+[T],Research Market Trends
+[T],Schedule Interviews
+[T],Organize Files
+[T],Plan Marketing Campaign
+[D],Quarterly Report Due
+[E],Board Meeting
+[T],Hire New Employee
+[E],Trade Show
+[E],Company Picnic
+[E],Staff Training
+[E],New Product Demo
+[D],Tax Filing Deadline
+[E],Sales Presentation
+[T],Create Budget
+[T],Client Follow-up
+[D],Contract Renewal Deadline
+[E],Product Showcase
+[E],Team Building Activity
+[D],Project Milestone
+[T],Employee Evaluation
+[D],Project Proposal Deadline
+[E],Product Launch Party
+[E],Annual Shareholder Meeting
+[D],Financial Report Deadline
+[T],Update Employee Handbook
