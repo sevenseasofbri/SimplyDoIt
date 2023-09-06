@@ -1,6 +1,7 @@
 # Main.py is the entry point of the program
 from data.DataManager import DataManager
 from task.Deadline import Deadline
+from task.Todo import Todo
 from task.Task import Task
 from typing import List
 
@@ -20,6 +21,14 @@ def main():
     print("\n")
     print("Total number of deadlines counted using streams:", count_deadlines_using_stream(tasks_data))
 
+    print("\n")
+    print("Todos in the task list:")
+    print_todos(tasks_data)
+
+    # Count todos using streams
+    print("\n")
+    print("Total number of todos counted using streams:", count_todos_using_stream(tasks_data))
+
     # Filter tasks using streams
     filtered_list = filter_task_list_using_streams(tasks_data, "Meeting")
     print("\nFiltered list of tasks (filtered by keyword \"Meeting\"):")
@@ -29,6 +38,11 @@ def main():
 # Counts total deadlines using streams
 def count_deadlines_using_stream(tasks: List[Task]) -> int:
     count = sum(1 for task in tasks if isinstance(task, Deadline))
+    return count
+
+# Counts total todos using streams
+def count_todos_using_stream(tasks: List[Task]) -> int:
+    count = sum(1 for task in tasks if isinstance(task, Todo))
     return count
 
 # Prints data using iteration
@@ -42,6 +56,13 @@ def print_deadlines(tasks_data: List[Task]):
     print("     Printing deadline using iteration")
     for task in tasks_data:
         if isinstance(task, Deadline):
+            print(task)
+
+# Prints todos using iteration
+def print_todos(tasks_data: List[Task]):
+    print("     Printing todos using iteration")
+    for task in tasks_data:
+        if isinstance(task, Todo):
             print(task)
 
 # Filters tasks using streams
