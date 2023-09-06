@@ -1,25 +1,25 @@
-[E],Birthday Party
+[E],09:00 06092023 - 10:30 06092023,Birthday Party
 [T],Buy Groceries
-[E],Conference
+[E],13:30 06092023 - 15:00 06092023,Conference
 [T],Write Report
-[E],Team Meeting
+[E],10:00 06092023 - 11:30 06092023,Team Meeting
 [T],Prepare Presentation
-[E],Product Launch
-[E],Company Retreat
+[E],14:00 06092023 - 15:30 06092023,Product Launch
+[E],16:00 06092023 - 17:30 06092023,Company Retreat
 [T],Review Contracts
 [T],Submit Expense Report
 [D],Project Deadline
 [T],Finish Proposal
 [T],Complete Training
 [T],Send Invoices
-[E],Client Meeting
+[E],15:30 06092023 - 17:00 06092023,Client Meeting
 [T],Update Website
-[E],Networking Event
+[E],09:30 06092023 - 11:00 06092023,Networking Event
 [T],Research Market Trends
 [T],Schedule Interviews
 [T],Organize Files
 [T],Plan Marketing Campaign
 [D],Quarterly Report Due
-[E],Board Meeting
+[E],10:30 06092023 - 12:00 06092023,Board Meeting
 [T],Hire New Employee
-[E],Trade Show
+[E],11:30 06092023 - 13:00 06092023,Trade Show
