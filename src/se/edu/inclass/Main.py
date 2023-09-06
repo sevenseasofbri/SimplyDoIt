@@ -20,7 +20,7 @@ def main():
     print("\n")
     print("Total number of deadlines counted using streams:", count_deadlines_using_stream(tasks_data))
 
-    # Filter task descriptions using streams
+    # Filter tasks using streams
     filtered_list = filter_task_list_using_streams(tasks_data, "Meeting")
     print("\nFiltered list of tasks (filtered by keyword \"Meeting\"):")
     print_data(filtered_list)
@@ -50,7 +50,7 @@ def print_deadlines(tasks_data: List[Task]):
         if isinstance(task, Deadline):
             print(task)
 
-# Filters task descriptions using streams
+# Filters tasks using streams
 def filter_task_list_using_streams(tasks: List[Task], filter_string: str) -> List[Task]:
     filtered_list = [task for task in tasks if filter_string in task.get_description()]
     return filtered_list
