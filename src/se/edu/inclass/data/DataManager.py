@@ -80,24 +80,19 @@ class DataManager:
     # Parses the event details and returns the event description, start time and end time
     def get_event_details(self, task_description):
         parts = task_description.split(",")
-        if len(parts) == 2:
-            # Extract time/date part and event description
-            time_date_part = parts[0].strip()
-            event_description = parts[1].strip()
-            # Extract start and end time
-            time_parts = time_date_part.split("-")
-            if len(time_parts) == 2:
-                start_time = time_parts[0].strip()
-                end_time = time_parts[1].strip()
-                return event_description, start_time, end_time
-            else:
-                print("Error: Invalid date/time format.")
-        else:
-            print("Error: Invalid event format.")
-        print("Populating empty event details due to error...")
-        event_description = ""
-        start_time = ""
-        end_time = ""
+        if len(parts) != 2:
+            print("Error: Invalid event format. Populating with empty values...")
+            return None, None, None
+        # Extract time/date part and event description
+        time_date_part = parts[0].strip()
+        event_description = parts[1].strip()
+        time_parts = time_date_part.split("-")
+        if len(time_parts) != 2:
+            print("Error: Invalid date/time format. Populating with empty values...")
+            return event_description, None, None
+        # Extract start and end time
+        start_time = time_parts[0].strip()
+        end_time = time_parts[1].strip()
         return event_description, start_time, end_time
     
     @staticmethod
