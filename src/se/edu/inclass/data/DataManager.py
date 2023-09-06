@@ -81,7 +81,7 @@ class DataManager:
     def get_deadline_details(self, task_description):
         parts = task_description.split(",")
         if len(parts) != 2:
-            print("Error: Invalid deadline details. Populating with empty values...")
+            print("Error: Invalid deadline format. Populating with empty values...")
             return None, None
         # Extract deadline description and due date
         due_date = parts[0].strip()
