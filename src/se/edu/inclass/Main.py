@@ -19,8 +19,8 @@ def main():
     print("Total number of deadlines counted using streams:", count_deadlines_using_stream(tasks_data))
 
     # Filter tasks using streams
-    filtered_list = filter_task_list_using_streams(tasks_data, "Client")
-    print("\nFiltered list of tasks (filtered by keyword \"Client\"):")
+    filtered_list = filter_task_list_using_streams(tasks_data, "Meeting")
+    print("\nFiltered list of tasks (filtered by keyword \"Meeting\"):")
     print_data(filtered_list)
     print("------------------------------------------------------------")
 

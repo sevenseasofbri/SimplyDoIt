@@ -23,20 +23,3 @@
 [E],Board Meeting
 [T],Hire New Employee
 [E],Trade Show
-[E],Company Picnic
-[E],Staff Training
-[E],New Product Demo
-[D],Tax Filing Deadline
-[E],Sales Presentation
-[T],Create Budget
-[T],Client Follow-up
-[D],Contract Renewal Deadline
-[E],Product Showcase
-[E],Team Building Activity
-[D],Project Milestone
-[T],Employee Evaluation
-[D],Project Proposal Deadline
-[E],Product Launch Party
-[E],Annual Shareholder Meeting
-[D],Financial Report Deadline
-[T],Update Employee Handbook
