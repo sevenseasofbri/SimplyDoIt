@@ -57,22 +57,23 @@ class DataManager:
             print("File access issues. Please check")
         return task_list
 
-    # Parses the data read from the data file 
+    # Parses the data read from the data file
     def parse(self, data_items):
         all_tasks = []
         for line in data_items:
             task_type = self.get_task_type(line)
             task_description = self.get_task_description(line)
+            task_completion = self.get_task_completion(line)
             if task_type == "T":
-                todo = Todo(task_description)
+                todo = Todo(task_description, task_completion)
                 all_tasks.append(todo)
             elif task_type == "D":
                 deadline_description, due_date = self.get_deadline_details(task_description)
-                deadline = Deadline(deadline_description, due_date)
+                deadline = Deadline(deadline_description, due_date, task_completion)
                 all_tasks.append(deadline)
             elif task_type == "E":
                 event_description, start_time, end_time = self.get_event_details(task_description)
-                event = Event(event_description, start_time, end_time)
+                event = Event(event_description, start_time, end_time, task_completion)
                 all_tasks.append(event)
             else:
                 print("Unknown task encountered. Skipping")
@@ -109,10 +110,22 @@ class DataManager:
     
     @staticmethod
     def get_task_description(line):
-        task_description = line[4:].strip()
+        end_index = line.find(',', 4)
+        task_description = line[4:end_index].strip()
         return task_description
 
     @staticmethod
     def get_task_type(line):
         task_type = line[0:2].replace("[", "").replace("]", "")
         return task_type
+
+    @staticmethod
+    def get_task_completion(line):
+        start_index = line.rfind(',')
+        task_completion = line[start_index+1:].strip()
+        return "Task Completed" if task_completion == "[X]" else "Task Not Completed"
+
+    @staticmethod
+    def get_taskcompletion(line):
+        # Deprecated, please use get_task_completion instead
+        return DataManager.get_task_completion(line)
