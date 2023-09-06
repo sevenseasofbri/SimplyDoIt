@@ -67,7 +67,8 @@ class DataManager:
                 todo = Todo(task_description)
                 all_tasks.append(todo)
             elif task_type == "D":
-                deadline = Deadline(task_description)
+                deadline_description, due_date = self.get_deadline_details(task_description)
+                deadline = Deadline(deadline_description, due_date)
                 all_tasks.append(deadline)
             elif task_type == "E":
                 event = Event(task_description)
@@ -75,6 +76,17 @@ class DataManager:
             else:
                 print("Unknown task encountered. Skipping")
         return all_tasks
+    
+    # Parses deadline details and returns the deadline description and due date
+    def get_deadline_details(self, task_description):
+        parts = task_description.split(",")
+        if len(parts) != 2:
+            print("Error: Invalid deadline details. Populating with empty values...")
+            return None, None
+        # Extract deadline description and due date
+        due_date = parts[0].strip()
+        deadline_description = parts[1].strip()
+        return deadline_description, due_date
 
     @staticmethod
     def get_task_description(line):

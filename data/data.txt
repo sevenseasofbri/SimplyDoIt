@@ -8,7 +8,7 @@
 [E],Company Retreat
 [T],Review Contracts
 [T],Submit Expense Report
-[D],Project Deadline
+[D],23:59 17112023,Project Deadline
 [T],Finish Proposal
 [T],Complete Training
 [T],Send Invoices
@@ -19,7 +19,7 @@
 [T],Schedule Interviews
 [T],Organize Files
 [T],Plan Marketing Campaign
-[D],Quarterly Report Due
+[D],10:00 15102023,Quarterly Report Due
 [E],Board Meeting
 [T],Hire New Employee
 [E],Trade Show
