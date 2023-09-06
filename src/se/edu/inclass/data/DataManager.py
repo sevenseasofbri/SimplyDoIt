@@ -82,7 +82,7 @@ class DataManager:
     # Parses deadline details and returns the deadline description and due date
     def get_deadline_details(self, task_description):
         parts = task_description.split(",")
-        if len(parts) != 2:
+        if len(parts) != 3:
             print("Error: Invalid deadline format. Populating with empty values...")
             return None, None
         # Extract deadline description and due date
@@ -93,7 +93,7 @@ class DataManager:
     # Parses the event details and returns the event description, start time and end time
     def get_event_details(self, task_description):
         parts = task_description.split(",")
-        if len(parts) != 2:
+        if len(parts) != 3:
             print("Error: Invalid event format. Populating with empty values...")
             return None, None, None
         # Extract time/date part and event description
@@ -110,8 +110,8 @@ class DataManager:
     
     @staticmethod
     def get_task_description(line):
-        end_index = line.find(',', 4)
-        task_description = line[4:end_index].strip()
+        start_index = line.find(',')
+        task_description = line[start_index+1:].strip()
         return task_description
 
     @staticmethod
