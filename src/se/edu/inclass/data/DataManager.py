@@ -71,7 +71,8 @@ class DataManager:
                 deadline = Deadline(deadline_description, due_date)
                 all_tasks.append(deadline)
             elif task_type == "E":
-                event = Event(task_description)
+                event_description, start_time, end_time = self.get_event_details(task_description)
+                event = Event(event_description, start_time, end_time)
                 all_tasks.append(event)
             else:
                 print("Unknown task encountered. Skipping")
@@ -88,6 +89,24 @@ class DataManager:
         deadline_description = parts[1].strip()
         return deadline_description, due_date
 
+    # Parses the event details and returns the event description, start time and end time
+    def get_event_details(self, task_description):
+        parts = task_description.split(",")
+        if len(parts) != 2:
+            print("Error: Invalid event format. Populating with empty values...")
+            return None, None, None
+        # Extract time/date part and event description
+        time_date_part = parts[0].strip()
+        event_description = parts[1].strip()
+        time_parts = time_date_part.split("-")
+        if len(time_parts) != 2:
+            print("Error: Invalid date/time format. Populating with empty values...")
+            return event_description, None, None
+        # Extract start and end time
+        start_time = time_parts[0].strip()
+        end_time = time_parts[1].strip()
+        return event_description, start_time, end_time
+    
     @staticmethod
     def get_task_description(line):
         task_description = line[4:].strip()
