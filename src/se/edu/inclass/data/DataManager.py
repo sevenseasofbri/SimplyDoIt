@@ -1,3 +1,4 @@
+# Data Manager class to handle data read and write
 import os
 import io
 from typing import List
@@ -10,9 +11,11 @@ class DataManager:
     def __init__(self, file_name):
         self.data_file = file_name
 
+    # Returns the data file name
     def get_data_file(self):
         return self.data_file
 
+    # Creates the data file if it does not exist
     def create_file(self):
         try:
             if os.path.exists(self.data_file):
@@ -26,6 +29,7 @@ class DataManager:
         except IOError as e:
             print("Cannot create file; reason: " + str(e))
 
+    # Reads data from the data file
     def read_file(self):
         try:
             if not os.path.exists(self.data_file):
@@ -43,6 +47,7 @@ class DataManager:
             print("File access issues. Please check")
             return []
 
+    # Loads data from the data file
     def load_data(self):
         task_list = None
         try:
@@ -52,6 +57,7 @@ class DataManager:
             print("File access issues. Please check")
         return task_list
 
+    # Parses the data read from the data file 
     def parse(self, data_items):
         all_tasks = []
         for line in data_items:
