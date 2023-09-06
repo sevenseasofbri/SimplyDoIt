@@ -1,0 +1,25 @@
+[E],Birthday Party
+[T],Buy Groceries
+[E],Conference
+[T],Write Report
+[E],Team Meeting
+[T],Prepare Presentation
+[E],Product Launch
+[E],Company Retreat
+[T],Review Contracts
+[T],Submit Expense Report
+[D],Project Deadline
+[T],Finish Proposal
+[T],Complete Training
+[T],Send Invoices
+[E],Client Meeting
+[T],Update Website
+[E],Networking Event
+[T],Research Market Trends
+[T],Schedule Interviews
+[T],Organize Files
+[T],Plan Marketing Campaign
+[D],Quarterly Report Due
+[E],Board Meeting
+[T],Hire New Employee
+[E],Trade Show
