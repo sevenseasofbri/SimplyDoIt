@@ -1,25 +1,25 @@
-[E],Birthday Party
-[T],Buy Groceries
-[E],Conference
-[T],Write Report
-[E],Team Meeting
-[T],Prepare Presentation
-[E],Product Launch
-[E],Company Retreat
-[T],Review Contracts
-[T],Submit Expense Report
-[D],Project Deadline
-[T],Finish Proposal
-[T],Complete Training
-[T],Send Invoices
-[E],Client Meeting
-[T],Update Website
-[E],Networking Event
-[T],Research Market Trends
-[T],Schedule Interviews
-[T],Organize Files
-[T],Plan Marketing Campaign
-[D],Quarterly Report Due
-[E],Board Meeting
-[T],Hire New Employee
-[E],Trade Show
+[E],09:00 06092023 - 10:30 06092023,Birthday Party, []
+[T],Buy Groceries, []
+[E],13:30 06092023 - 15:00 06092023,Conference, [X]
+[T],Write Report, [X]
+[E],10:00 06092023 - 11:30 06092023,Team Meeting, []
+[T],Prepare Presentation, []
+[E],14:00 06092023 - 15:30 06092023,Product Launch, [X]
+[E],16:00 06092023 - 17:30 06092023,Company Retreat, []
+[T],Review Contracts, []
+[T],Submit Expense Report, []
+[D],23:59 17112023,Project Deadline, []
+[T],Finish Proposal, [X]
+[T],Complete Training, []
+[T],Send Invoices, [X]
+[E],15:30 06092023 - 17:00 06092023,Client Meeting, [X]
+[T],Update Website, [X]
+[E],09:30 06092023 - 11:00 06092023,Networking Event, [X]
+[T],Research Market Trends, [X]
+[T],Schedule Interviews, []
+[T],Organize Files, [X]
+[T],Plan Marketing Campaign, []
+[D],10:00 15102023,Quarterly Report Due, []
+[E],10:30 06092023 - 12:00 06092023,Board Meeting, [X]
+[T],Hire New Employee, []
+[E],11:30 06092023 - 13:00 06092023,Trade Show, []

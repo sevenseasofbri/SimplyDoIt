@@ -57,31 +57,75 @@ class DataManager:
             print("File access issues. Please check")
         return task_list
 
-    # Parses the data read from the data file 
+    # Parses the data read from the data file
     def parse(self, data_items):
         all_tasks = []
         for line in data_items:
             task_type = self.get_task_type(line)
             task_description = self.get_task_description(line)
+            task_completion = self.get_task_completion(line)
             if task_type == "T":
-                todo = Todo(task_description)
+                todo = Todo(task_description, task_completion)
                 all_tasks.append(todo)
             elif task_type == "D":
-                deadline = Deadline(task_description)
+                deadline_description, due_date = self.get_deadline_details(task_description)
+                deadline = Deadline(deadline_description, due_date, task_completion)
                 all_tasks.append(deadline)
             elif task_type == "E":
-                event = Event(task_description)
+                event_description, start_time, end_time = self.get_event_details(task_description)
+                event = Event(event_description, start_time, end_time, task_completion)
                 all_tasks.append(event)
             else:
                 print("Unknown task encountered. Skipping")
         return all_tasks
+    
+    # Parses deadline details and returns the deadline description and due date
+    def get_deadline_details(self, task_description):
+        parts = task_description.split(",")
+        if len(parts) != 3:
+            print("Error: Invalid deadline format. Populating with empty values...")
+            return None, None
+        # Extract deadline description and due date
+        due_date = parts[0].strip()
+        deadline_description = parts[1].strip()
+        return deadline_description, due_date
 
+    # Parses the event details and returns the event description, start time and end time
+    def get_event_details(self, task_description):
+        parts = task_description.split(",")
+        if len(parts) != 3:
+            print("Error: Invalid event format. Populating with empty values...")
+            return None, None, None
+        # Extract time/date part and event description
+        time_date_part = parts[0].strip()
+        event_description = parts[1].strip()
+        time_parts = time_date_part.split("-")
+        if len(time_parts) != 2:
+            print("Error: Invalid date/time format. Populating with empty values...")
+            return event_description, None, None
+        # Extract start and end time
+        start_time = time_parts[0].strip()
+        end_time = time_parts[1].strip()
+        return event_description, start_time, end_time
+    
     @staticmethod
     def get_task_description(line):
-        task_description = line[4:].strip()
+        start_index = line.find(',')
+        task_description = line[start_index+1:].strip()
         return task_description
 
     @staticmethod
     def get_task_type(line):
         task_type = line[0:2].replace("[", "").replace("]", "")
         return task_type
+
+    @staticmethod
+    def get_task_completion(line):
+        start_index = line.rfind(',')
+        task_completion = line[start_index+1:].strip()
+        return "Task Completed" if task_completion == "[X]" else "Task Not Completed"
+
+    @staticmethod
+    def get_taskcompletion(line):
+        # Deprecated, please use get_task_completion instead
+        return DataManager.get_task_completion(line)
